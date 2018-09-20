@@ -37,7 +37,7 @@
                 <script type="text/javascript">
                     $(document).ready(function(){
                         var binurl = "https://api.jsonbin.io/b/5ba351d10fbf2833e228eedf";
-                        var url = "http://api.myjson.com/bins/8zhh0";
+                        var url = "https://api.myjson.com/bins/8zhh0";
                         $.get(url,function(data){
                             window.data = data;
                         });
@@ -50,7 +50,7 @@
                         var data = window.data;
                         data["text" + Math.random()] = textE;
                         var binurl = "https://api.jsonbin.io/b/5ba351d10fbf2833e228eedf";
-                        var url = "http://api.myjson.com/bins/8zhh0";
+                        var url = "https://api.myjson.com/bins/8zhh0";
                         $.ajax({
                             url:url,
                             type:"PUT",
