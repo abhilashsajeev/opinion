@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Opinion </title>
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    </head>
+    <body>
+        
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    
+                    <a class="navbar-brand" href="#">Opinion</a>
+                </div>
+                
+                    </div><!-- /.container-fluid -->
+                </nav>
+                <div class="container-fluid row center-block">
+                    <div class="input-group input-group-lg">
+                    <input type="text" class="form-control"  id="sec" placeholder="Your opinion or secret" aria-describedby="sizing-addon1">
+                    <button onclick="handleSubmit()" id="sub" class="btn btn-lg btn-primary">Submit</button>
+
+                </div>  
+                </div>
+                
+                <script type="text/javascript">
+                    function handleSubmit(){
+                        var textE = $(".sec").val();
+                        var data  = {text: textE}
+                        var url = "https://api.myjson.com/bins/8zhh0";
+                        $.ajax({
+                        url:url,
+                        type:"POST",
+                        data: JSON.stringify(data),
+                        contentType:"application/json; charset=utf-8",
+                        dataType:"json",
+                        success: function(data, textStatus, jqXHR){
+                            alert("success");
+                        }
+                    });
+                    }
+                </script>
+            </body>
+        </html>
